@@ -26,6 +26,7 @@ class DatabaseSeeder extends Seeder
             TicketSeeder::class,
             SpeakerSeeder::class,
             SponsorSeeder::class,
+            RegistrationSeeder::class,
         ]);
     }
 }

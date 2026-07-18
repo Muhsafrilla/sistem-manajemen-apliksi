@@ -12,6 +12,7 @@ use App\Http\Controllers\EventController;
 use App\Http\Controllers\TicketController;
 use App\Http\Controllers\SpeakerController;
 use App\Http\Controllers\SponsorController;
+use App\Http\Controllers\RegistrationController;
 Route::get('/', function () {
     return view('welcome');
 });
@@ -38,6 +39,7 @@ Route::middleware('auth')->group(function () {
     Route::resource('/tickets', TicketController::class)->middleware('role:Superadmin,Organizer');
     Route::resource('/speakers', SpeakerController::class)->middleware('role:Superadmin,Organizer');
     Route::resource('/sponsors', SponsorController::class)->middleware('role:Superadmin,Organizer');
+    Route::resource('/registrations', RegistrationController::class)->middleware('role:Superadmin,Organizer');
     Route::get('/setting', [SettingController::class, 'index'])->name('setting.index');
     Route::put('/setting/{setting}/update', [SettingController::class, 'update'])->name('setting.update');
 });

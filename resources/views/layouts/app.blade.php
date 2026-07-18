@@ -334,6 +334,13 @@
                         <span>Sponsor</span>
                     </a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link {{ request()->routeIs('registrations.*') ? '' : 'collapsed' }}"
+                        href="{{ route('registrations.index') }}">
+                        <i class='bx bx-receipt'></i>
+                        <span>Registrasi</span>
+                    </a>
+                </li>
             @endif
 
             @if (Auth::user()->role == 'Superadmin')

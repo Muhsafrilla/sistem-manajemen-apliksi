@@ -22,4 +22,9 @@ class Ticket extends Model
     {
         return $this->belongsTo(TicketType::class);
     }
+
+    public function registrations()
+    {
+        return $this->hasMany(Registration::class);
+    }
 }

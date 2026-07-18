@@ -45,4 +45,9 @@ class Event extends Model
     {
         return $this->belongsToMany(Sponsor::class);
     }
+
+    public function registrations()
+    {
+        return $this->hasMany(Registration::class);
+    }
 }
