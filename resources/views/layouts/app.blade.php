@@ -284,6 +284,16 @@
                 </a>
             </li>
 
+            @if (in_array(Auth::user()->role, ['Superadmin', 'Organizer']))
+                <li class="nav-item">
+                    <a class="nav-link {{ request()->routeIs('event_categories.*') ? '' : 'collapsed' }}"
+                        href="{{ route('event_categories.index') }}">
+                        <i class='bx bx-category'></i>
+                        <span>Kategori Event</span>
+                    </a>
+                </li>
+            @endif
+
             @if (Auth::user()->role == 'Superadmin')
                 <li class="nav-item">
                     <a class="nav-link {{ request()->routeIs('user.*') ? '' : 'collapsed' }}"
