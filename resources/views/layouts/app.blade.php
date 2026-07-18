@@ -341,6 +341,20 @@
                         <span>Registrasi</span>
                     </a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link {{ request()->routeIs('feedbacks.*') ? '' : 'collapsed' }}"
+                        href="{{ route('feedbacks.index') }}">
+                        <i class='bx bx-message-square-detail'></i>
+                        <span>Feedback Peserta</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link {{ request()->routeIs('reports.*') ? '' : 'collapsed' }}"
+                        href="{{ route('reports.index') }}">
+                        <i class='bx bx-bar-chart-alt-2'></i>
+                        <span>Laporan Kehadiran</span>
+                    </a>
+                </li>
             @endif
 
             @if (Auth::user()->role == 'Superadmin')

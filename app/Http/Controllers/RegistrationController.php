@@ -94,6 +94,8 @@ class RegistrationController extends Controller
             'status'    => 'required|in:Pending,Confirmed,Cancelled',
         ]);
 
+        $validate['is_attended'] = $request->has('is_attended');
+
         DB::beginTransaction();
 
         try {

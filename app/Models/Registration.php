@@ -8,11 +8,12 @@ class Registration extends Model
 {
     protected $fillable = [
         'event_id', 'user_id', 'name', 'email', 'phone', 
-        'ticket_id', 'status', 'registered_at'
+        'ticket_id', 'status', 'registered_at', 'is_attended'
     ];
 
     protected $casts = [
         'registered_at' => 'datetime',
+        'is_attended' => 'boolean',
     ];
 
     public function event()

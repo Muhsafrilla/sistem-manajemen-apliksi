@@ -38,6 +38,11 @@
                             <div class="invalid-feedback">{{ $message }}</div>
                         @enderror
                     </div>
+
+                    <div class="mb-3 form-check form-switch mt-4">
+                        <input class="form-check-input" type="checkbox" role="switch" id="is_attended" name="is_attended" {{ old('is_attended', $registration->is_attended) ? 'checked' : '' }}>
+                        <label class="form-check-label" for="is_attended">Peserta Telah Hadir (Check-In)</label>
+                    </div>
                 </div>
 
                 <div class="col-md-6">
