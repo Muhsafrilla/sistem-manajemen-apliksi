@@ -292,6 +292,13 @@
                         <span>Kategori Event</span>
                     </a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link {{ request()->routeIs('venues.*') ? '' : 'collapsed' }}"
+                        href="{{ route('venues.index') }}">
+                        <i class='bx bx-map-pin'></i>
+                        <span>Venue / Lokasi</span>
+                    </a>
+                </li>
             @endif
 
             @if (Auth::user()->role == 'Superadmin')
