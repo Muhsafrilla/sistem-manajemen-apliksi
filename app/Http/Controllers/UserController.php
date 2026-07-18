@@ -38,7 +38,7 @@ class UserController extends Controller
 
         $validate = $request->validate([
             'name' => 'required',
-            'role' => 'required',
+            'role' => 'required|in:Superadmin,Organizer,Attendee,Speaker,Sponsor',
             'password' => 'required|min:8',
             'passwordconfirm' => 'required|same:password',
             'email' => 'required|email|lowercase|unique:users,email',
@@ -46,6 +46,7 @@ class UserController extends Controller
         ], [
             'name.required' => 'Nama wajib diisi',
             'role.required' => 'Role wajib diisi',
+            'role.in' => 'Role tidak valid',
             'password.required' => 'Password wajib diisi',
             'password.min' => 'Password minimal 8 karakter',
             'passwordconfirm.required' => 'Konfirmasi password wajib diisi',
@@ -108,7 +109,7 @@ class UserController extends Controller
 
         $validate = $request->validate([
             'name' => 'required',
-            'role' => 'required',
+            'role' => 'required|in:Superadmin,Organizer,Attendee,Speaker,Sponsor',
             'password' => 'nullable|min:8',
             'passwordconfirm' => 'nullable|same:password',
             'email' => 'required|email|lowercase|unique:users,email,' . $user->id,
@@ -116,6 +117,7 @@ class UserController extends Controller
         ], [
             'name.required' => 'Nama wajib diisi',
             'role.required' => 'Role wajib diisi',
+            'role.in' => 'Role tidak valid',
             'password.min' => 'Password minimal 8 karakter',
             'passwordconfirm.same' => 'Konfirmasi password tidak cocok',
             'email.required' => 'Email wajib diisi',
