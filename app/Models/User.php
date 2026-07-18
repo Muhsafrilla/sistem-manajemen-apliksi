@@ -29,4 +29,12 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    /**
+     * Get the organizer associated with the user.
+     */
+    public function organizer()
+    {
+        return $this->hasOne(Organizer::class);
+    }
 }

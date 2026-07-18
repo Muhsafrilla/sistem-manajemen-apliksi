@@ -299,6 +299,13 @@
                         <span>Venue / Lokasi</span>
                     </a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link {{ request()->routeIs('organizers.*') ? '' : 'collapsed' }}"
+                        href="{{ route('organizers.index') }}">
+                        <i class='bx bx-briefcase'></i>
+                        <span>Profil Organizer</span>
+                    </a>
+                </li>
             @endif
 
             @if (Auth::user()->role == 'Superadmin')
