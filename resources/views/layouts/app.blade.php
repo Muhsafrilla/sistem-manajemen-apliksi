@@ -320,6 +320,20 @@
                         <span>Tiket</span>
                     </a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link {{ request()->routeIs('speakers.*') ? '' : 'collapsed' }}"
+                        href="{{ route('speakers.index') }}">
+                        <i class='bx bx-microphone'></i>
+                        <span>Pembicara</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link {{ request()->routeIs('sponsors.*') ? '' : 'collapsed' }}"
+                        href="{{ route('sponsors.index') }}">
+                        <i class='bx bx-star'></i>
+                        <span>Sponsor</span>
+                    </a>
+                </li>
             @endif
 
             @if (Auth::user()->role == 'Superadmin')

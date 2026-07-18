@@ -35,4 +35,14 @@ class Event extends Model
     {
         return $this->hasMany(Ticket::class);
     }
+
+    public function speakers()
+    {
+        return $this->belongsToMany(Speaker::class);
+    }
+
+    public function sponsors()
+    {
+        return $this->belongsToMany(Sponsor::class);
+    }
 }
