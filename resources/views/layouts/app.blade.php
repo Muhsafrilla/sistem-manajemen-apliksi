@@ -313,6 +313,13 @@
                         <span>Event</span>
                     </a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link {{ request()->routeIs('tickets.*') ? '' : 'collapsed' }}"
+                        href="{{ route('tickets.index') }}">
+                        <i class='bx bx-purchase-tag'></i>
+                        <span>Tiket</span>
+                    </a>
+                </li>
             @endif
 
             @if (Auth::user()->role == 'Superadmin')
