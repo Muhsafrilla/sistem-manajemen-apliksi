@@ -8,6 +8,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\EventCategoryController;
 use App\Http\Controllers\VenueController;
 use App\Http\Controllers\OrganizerController;
+use App\Http\Controllers\EventController;
 Route::get('/', function () {
     return view('welcome');
 });
@@ -30,6 +31,7 @@ Route::middleware('auth')->group(function () {
     Route::resource('/event_categories', EventCategoryController::class)->middleware('role:Superadmin,Organizer');
     Route::resource('/venues', VenueController::class)->middleware('role:Superadmin,Organizer');
     Route::resource('/organizers', OrganizerController::class)->middleware('role:Superadmin,Organizer');
+    Route::resource('/events', EventController::class)->middleware('role:Superadmin,Organizer');
     Route::get('/setting', [SettingController::class, 'index'])->name('setting.index');
     Route::put('/setting/{setting}/update', [SettingController::class, 'update'])->name('setting.update');
 });

@@ -306,6 +306,13 @@
                         <span>Profil Organizer</span>
                     </a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link {{ request()->routeIs('events.*') ? '' : 'collapsed' }}"
+                        href="{{ route('events.index') }}">
+                        <i class='bx bx-calendar-event'></i>
+                        <span>Event</span>
+                    </a>
+                </li>
             @endif
 
             @if (Auth::user()->role == 'Superadmin')
